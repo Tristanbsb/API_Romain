@@ -1,0 +1,41 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model actors {
+  id            Int            @id @default(autoincrement())
+  first_name    String
+  last_name     String
+  date_of_birth DateTime
+  date_of_death DateTime?
+  films_actors  films_actors[]
+}
+
+model films {
+  id           Int            @id @default(autoincrement())
+  name         String
+  synopsis     String
+  release_year Int
+  genre_id     Int
+  films_actors films_actors[]
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model films_actors {
+  film_id  Int
+  actor_id Int
+  films    films  @relation(fields: [film_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  actors   actors @relation(fields: [actor_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+
+  @@id([film_id, actor_id])
+}
+
+model genres {
+  id   Int    @id @default(autoincrement())
+  name String
+}
