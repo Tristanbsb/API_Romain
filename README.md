@@ -1,9 +1,9 @@
-# Projet Services Web - EPSI Bachelor 3 DevOps
+# Projet Services Web
 
 ## Description
 
-L’objectif de ce projet est de réaliser une API de gestion de base de données de Films en
-NodeJS avec le framework Express selon les spécifications suivantes.
+L’objectif de ce projet est de créer une API de gestion de base de données de Films. Pour cela
+on va utiliser NodeJS avec le framework Express afin de créer les routes suivantes.
 
 ## Routes
 
@@ -22,13 +22,6 @@ NodeJS avec le framework Express selon les spécifications suivantes.
 | PUT    | /film/{id}  | Modifie le film selon les informations du corps de la requête (erreur si les acteurs et/ou le genre n'existent pas) |
 | DELETE | /film/{id}  | Supprime le film                                                                                                    |
 
-## Critères de notation
+## Amélioration
 
-| Status | Réalisation                                                          | Points |
-| ------ | -------------------------------------------------------------------- | ------ |
-| ✅     | Mise en place d'une API NodeJS + ExpressJS écoutant sur le port 8000 | 1      |
-| ✅     | Respect du format d'URL                                              | 0.5    |
-| ✅     | Sécurisation via API Key                                             | 2      |
-| ✅     | Réponses au format JSON                                              | 0.5    |
-| ❌     | Validation des modifications via ETag                                | 3      |
-| ✅     | 13 points d'entrée                                                   | 13     |
+Ce projet respecte tous les critères d'évaluation sauf la validation des modifications via ETag
